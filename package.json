@@ -1,0 +1,51 @@
+{
+"name": "gofrugal-ecommerce-sdk",
+  "description": "GoFrugal ERP Ecommerce SDK for Node.js, Bun, Deno, and Web",
+  "keywords": [
+    "gofrugal",
+    "ecommerce",
+    "erp",
+    "sdk",
+    "api",
+    "commerce",
+    "retail",
+    "pos",
+    "inventory",
+    "orders",
+    "products",
+    "customers",
+    "nodejs",
+    "bun",
+    "deno",
+    "browser",
+    "typescript"
+  ],
+  "version": "1.0.3",
+  "type": "module",
+  "main": "./dist/node/index.js",
+  "browser": "./dist/browser/index.js",
+  "exports": {
+    ".": {
+      "bun": "./dist/bun/index.js",
+      "deno": "./dist/deno/index.js", 
+      "node": "./dist/node/index.js",
+      "browser": "./dist/browser/index.js",
+      "default": "./dist/node/index.js"
+    }
+  },
+  "files": ["dist/"],
+  "scripts": {
+    "build": "bun run build:all",
+    "build:all": "bun run build:node && bun run build:bun && bun run build:browser && bun run build:deno",
+    "build:node": "bun build src/index.ts --outdir dist/node --target node --format esm",
+    "build:bun": "bun build src/index.ts --outdir dist/bun --target bun",
+    "build:browser": "bun build src/index.ts --outdir dist/browser --target browser",
+    "build:deno": "bun build src/index.ts --outdir dist/deno --target node --format esm"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  }
+}
