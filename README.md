@@ -44,6 +44,35 @@ const sdk = new GoFrugalSDK({
   baseUrl: 'https://connect.gofrugal.com/eCommerceAPI'
 });
 ```
+
+---
+
+## 📘 Usage Examples
+
+### 📦 1. Get All Items
+
+```ts
+const items = await sdk.getItems();
+console.log(items);
+```
+
+### 🛒 2. Create a Sales Order
+
+```ts
+const result = await sdk.createSalesOrder({
+  onlineReferenceNo: 'ORDER123',
+  createdAt: new Date().toISOString(),
+  status: 'Placed',
+  customerName: 'Rohit Nair',
+  customerEmail: 'rohitnairtech@gmail.com',
+  customerMobile: '9999999999',
+  orderItems: [
+    { rowNo: 1, itemId: 'ITEM001', quantity: 2, rate: 150 }
+  ]
+});
+console.log(result);
+
+```
 ---
 
 ## 🌍 Multi-Runtime Support
@@ -110,34 +139,6 @@ const sdk = new GoFrugalSDK({
 
 ---
 
-## 📘 Usage Examples
-
-### 📦 1. Get All Items
-
-```ts
-const items = await sdk.getItems();
-console.log(items);
-```
-
-### 🛒 2. Create a Sales Order
-
-```ts
-const result = await sdk.createSalesOrder({
-  onlineReferenceNo: 'ORDER123',
-  createdAt: new Date().toISOString(),
-  status: 'Placed',
-  customerName: 'Rohit Nair',
-  customerEmail: 'rohitnairtech@gmail.com',
-  customerMobile: '9999999999',
-  orderItems: [
-    { rowNo: 1, itemId: 'ITEM001', quantity: 2, rate: 150 }
-  ]
-});
-console.log(result);
-
-```
----
-
 ## 📚 API Reference
 
 | Method                                | Description                              |
@@ -179,7 +180,7 @@ We welcome contributions to make this SDK better!
 
 ### 📂 Where to Start?
 
-Check out the list of [open issues](https://github.com/example/gofrugal-ecommerce-sdk/issues) for ideas to work on.
+Check out the list of [open issues](https://github.com/rohitnairtech/gofrugal-ecommerce-sdk/issues) for ideas to work on.
 
 ---
 

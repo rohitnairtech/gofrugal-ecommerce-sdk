@@ -1,6 +1,14 @@
 {
-"name": "gofrugal-ecommerce-sdk",
+  "name": "gofrugal-ecommerce-sdk",
   "description": "GoFrugal ERP Ecommerce SDK for Node.js, Bun, Deno, and Web",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rohitnairtech/gofrugal-ecommerce-sdk.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rohitnairtech/gofrugal-ecommerce-sdk/issues"
+  },
+  "homepage": "https://github.com/rohitnairtech/gofrugal-ecommerce-sdk#readme",
   "keywords": [
     "gofrugal",
     "ecommerce",
@@ -20,20 +28,22 @@
     "browser",
     "typescript"
   ],
-  "version": "1.0.3",
+  "version": "1.0.5",
   "type": "module",
   "main": "./dist/node/index.js",
   "browser": "./dist/browser/index.js",
   "exports": {
     ".": {
       "bun": "./dist/bun/index.js",
-      "deno": "./dist/deno/index.js", 
+      "deno": "./dist/deno/index.js",
       "node": "./dist/node/index.js",
       "browser": "./dist/browser/index.js",
       "default": "./dist/node/index.js"
     }
   },
-  "files": ["dist/"],
+  "files": [
+    "dist/"
+  ],
   "scripts": {
     "build": "bun run build:all",
     "build:all": "bun run build:node && bun run build:bun && bun run build:browser && bun run build:deno",
